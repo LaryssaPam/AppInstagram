@@ -1,3 +1,53 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Connexion — AppInstagram</title>
+  <link href="{{ asset('css/login.css') }}" rel="stylesheet">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="robots" content="noindex">
+</head>
+<body>
+  <main class="page">
+    <section class="card-wrap">
+      <div class="card">
+        <div class="logo">Instagram</div>
+        <form method="POST" action="{{ route('login') }}" class="login-form">
+          @csrf
+          <input name="email" type="text" placeholder="Téléphone, nom d'utilisateur ou email" aria-label="email" required>
+          <input name="password" type="password" placeholder="Mot de passe" aria-label="password" required>
+          <button type="submit" class="btn">Se connecter</button>
+        </form>
+
+        <div class="or">
+          <span></span>
+          <span>OU</span>
+          <span></span>
+        </div>
+
+        <div class="alt-login">
+          <a href="#" class="facebook">Se connecter avec Facebook</a>
+        </div>
+
+        <p class="forgot">Mot de passe oublié ?</p>
+      </div>
+
+      <div class="card signup">
+        <p>Vous n'avez pas de compte ? <a href="{{ route('register') }}">Inscrivez-vous</a></p>
+      </div>
+
+      <footer class="download">
+        <p>Téléchargez l'application.</p>
+        <div class="stores">
+          <a href="#" class="store">App Store</a>
+          <a href="#" class="store">Google Play</a>
+        </div>
+      </footer>
+    </section>
+  </main>
+</body>
+</html>
 <x-guest-layout>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
